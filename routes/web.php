@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('admin.home');
+Route::middleware('auth')
+    ->prefix('admin') // prefisso url es. /admin o admin/posts
+    ->name('admin.') //prefisso nome es. admin.home
+    ->namespace('Admin') //prefisso namespace es. Admin\HomeController@index
+    ->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
+
+        Route::resource('posts', 'PostController');
+    });
+
+Route::get('{any?}', function () {
+    return view('guest.home');
+})->where('any', '.*');
