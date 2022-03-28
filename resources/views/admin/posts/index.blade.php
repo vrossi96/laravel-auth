@@ -33,7 +33,15 @@
                               <td>{{ $post->slug }}</td>
                               <td>{{ $post->updated_at }}</td>
                               <td>
-                                 <a href="{{ route('admin.posts.show', $post->id) }}">Dettagli</a>
+                                 {{-- DETAILS --}}
+                                 <a class="btn btn-primary btn-sm"
+                                    href="{{ route('admin.posts.show', $post->id) }}">Details</a>
+                                 {{-- DELETE POST --}}
+                                 <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                 </form>
                               </td>
                            </tr>
                         @endforeach
