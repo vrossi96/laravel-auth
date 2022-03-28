@@ -5,7 +5,10 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card">
-               <div class="card-header">Posts Manager</div>
+               <div class="card-header d-flex justify-content-between">
+                  <span>Posts Manager</span>
+                  <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create') }}">New post</a>
+               </div>
 
                <div class="card-body">
                   @if (session('status'))
