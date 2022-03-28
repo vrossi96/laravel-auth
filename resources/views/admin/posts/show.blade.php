@@ -20,7 +20,16 @@
                      <li class="list-group-item">Creation: {{ $post->created_at }}</li>
                      <li class="list-group-item">Last update: {{ $post->updated_at }}</li>
                   </ul>
-                  <a href="{{ route('admin.posts.index') }}" class="btn btn-primary">Go to the posts list</a>
+                  <hr>
+                  <div class="d-flex justify-content-between">
+                     <a href="{{ route('admin.posts.index') }}" class="btn btn-primary btn-sm">Go to the posts list</a>
+                     {{-- DELETE POST --}}
+                     <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                     </form>
+                  </div>
                </div>
             </div>
          </div>
