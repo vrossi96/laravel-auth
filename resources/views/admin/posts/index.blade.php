@@ -32,7 +32,7 @@
                               <td>{{ $post->title }}</td>
                               <td>{{ $post->slug }}</td>
                               <td>{{ $post->updated_at }}</td>
-                              <td>
+                              <td class="d-flex align-items-center justify-content-between">
                                  {{-- DETAILS --}}
                                  <a class="btn btn-primary btn-sm"
                                     href="{{ route('admin.posts.show', $post->id) }}">Details</a>
