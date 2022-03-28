@@ -4,7 +4,9 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12">
-            <form action="{{ route('admin.posts.update', $post->id) }}">
+            <form action="{{ route('admin.posts.update', $post->id) }}" method="POST">
+               @method('PUT')
+               @csrf
                <div class="form-group">
                   <label for="title">Title</label>
                   <input name="title" type="text" class="form-control" id="title" placeholder="Enter title"
