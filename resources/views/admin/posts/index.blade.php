@@ -22,6 +22,7 @@
                            <th scope="col">Title</th>
                            <th scope="col">Slug</th>
                            <th scope="col">Updated at</th>
+                           <th scope="col"></th>
                         </tr>
                      </thead>
                      <tbody>
@@ -31,6 +32,9 @@
                               <td>{{ $post->title }}</td>
                               <td>{{ $post->slug }}</td>
                               <td>{{ $post->updated_at }}</td>
+                              <td>
+                                 <a href="{{ route('admin.posts.show', $post->id) }}">Dettagli</a>
+                              </td>
                            </tr>
                         @endforeach
                      </tbody>
