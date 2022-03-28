@@ -26,13 +26,17 @@
                         <a href="{{ route('admin.posts.index') }}" class="btn btn-primary btn-sm">Go to the posts
                            list</a>
                         {{-- EDIT --}}
-                        <a class="btn btn-secondary btn-sm" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                        <a class="btn btn-secondary btn-sm" href="{{ route('admin.posts.edit', $post->id) }}">
+                           <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
                      </div>
                      {{-- DELETE POST --}}
                      <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                        <button class="btn btn-danger btn-sm" type="submit">
+                           <i class="fa-solid fa-trash-can"></i>
+                        </button>
                      </form>
                   </div>
                </div>

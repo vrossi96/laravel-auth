@@ -7,7 +7,9 @@
             <div class="card">
                <div class="card-header d-flex justify-content-between">
                   <span>Posts Manager</span>
-                  <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create') }}">New post</a>
+                  <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create') }}">
+                     <i class="fa-solid fa-plus"></i>
+                  </a>
                </div>
 
                <div class="card-body">
@@ -38,17 +40,22 @@
                               <td class="d-flex align-items-center justify-content-between">
                                  <div>
                                     {{-- DETAILS --}}
-                                    <a class="btn btn-primary btn-sm"
-                                       href="{{ route('admin.posts.show', $post->id) }}">Details</a>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.show', $post->id) }}">
+                                       <i class="fa-solid fa-circle-info"></i>
+                                    </a>
                                     {{-- EDIT --}}
                                     <a class="btn btn-secondary btn-sm"
-                                       href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                                       href="{{ route('admin.posts.edit', $post->id) }}">
+                                       <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
                                  </div>
                                  {{-- DELETE POST --}}
                                  <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                    <button class="btn btn-danger btn-sm" type="submit">
+                                       <i class="fa-solid fa-trash-can"></i>
+                                    </button>
                                  </form>
                               </td>
                            </tr>
