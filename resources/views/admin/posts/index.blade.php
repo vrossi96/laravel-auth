@@ -2,8 +2,8 @@
 
 @section('content')
    <div class="container">
-      <div class="row justify-content-center">
-         <div class="col-md-8">
+      <div class="row">
+         <div class="col-md-12">
             <div class="card">
                <div class="card-header">Posts Manager</div>
 
@@ -33,9 +33,14 @@
                               <td>{{ $post->slug }}</td>
                               <td>{{ $post->updated_at }}</td>
                               <td class="d-flex align-items-center justify-content-between">
-                                 {{-- DETAILS --}}
-                                 <a class="btn btn-primary btn-sm"
-                                    href="{{ route('admin.posts.show', $post->id) }}">Details</a>
+                                 <div>
+                                    {{-- DETAILS --}}
+                                    <a class="btn btn-primary btn-sm"
+                                       href="{{ route('admin.posts.show', $post->id) }}">Details</a>
+                                    {{-- EDIT --}}
+                                    <a class="btn btn-secondary btn-sm"
+                                       href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                                 </div>
                                  {{-- DELETE POST --}}
                                  <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                                     @method('DELETE')
