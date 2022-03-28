@@ -22,7 +22,12 @@
                   </ul>
                   <hr>
                   <div class="d-flex justify-content-between">
-                     <a href="{{ route('admin.posts.index') }}" class="btn btn-primary btn-sm">Go to the posts list</a>
+                     <div>
+                        <a href="{{ route('admin.posts.index') }}" class="btn btn-primary btn-sm">Go to the posts
+                           list</a>
+                        {{-- EDIT --}}
+                        <a class="btn btn-secondary btn-sm" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                     </div>
                      {{-- DELETE POST --}}
                      <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                         @method('DELETE')
