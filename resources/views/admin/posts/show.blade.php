@@ -10,9 +10,9 @@
                   <img class="card-img-top" src="{{ $post->img }}" alt="Post Img">
                @endif
                <div class="card-body">
-                  <h3 class="card-title">
-                     {{ $post->title }}
-                     <sub class="badge badge-pill badge-info"> ID: {{ $post->id }}</sub>
+                  <h3 class="card-title d-flex justify-content-between">
+                     <span>{{ $post->title }}</span>
+                     <sup class="badge badge-pill badge-info"> ID: {{ $post->id }}</sup>
                   </h3>
                   <h4>{{ $post->slug }}</h4>
                   <p class="card-text">{{ $post->content }}</p>
