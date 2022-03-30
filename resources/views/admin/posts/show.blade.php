@@ -4,12 +4,12 @@
    <div class="container">
       <div class="row justify-content-center">
          <div class="col-md-8">
-            <div class="card">
-               <div class="card-header">Manage post</div>
+            <div class="card border-dark">
+               <div class="card-header text-white bg-dark">Manage post</div>
                @if ($post->img)
                   <img class="card-img-top" src="{{ $post->img }}" alt="Post Img">
                @endif
-               <div class="card-body">
+               <div class="card-body text-white bg-secondary">
                   <h3 class="card-title d-flex justify-content-between">
                      <span>{{ $post->title }}</span>
                      <sup class="badge badge-pill badge-info"> ID: {{ $post->id }}</sup>
@@ -17,8 +17,8 @@
                   <h4>{{ $post->slug }}</h4>
                   <p class="card-text">{{ $post->content }}</p>
                   <ul class="list-group list-group-flush">
-                     <li class="list-group-item">Creation: {{ $post->created_at }}</li>
-                     <li class="list-group-item">Last update: {{ $post->updated_at }}</li>
+                     <li class="list-group-item text-white bg-secondary">Creation: {{ $post->created_at }}</li>
+                     <li class="list-group-item text-white bg-secondary">Last update: {{ $post->updated_at }}</li>
                   </ul>
                   <hr>
                   <div class="d-flex justify-content-between">

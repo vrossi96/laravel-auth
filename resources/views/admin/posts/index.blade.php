@@ -4,15 +4,15 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12">
-            <div class="card">
-               <div class="card-header d-flex justify-content-between">
+            <div class="card border-dark">
+               <div class="card-header text-white bg-dark d-flex justify-content-between">
                   <span>Posts Manager</span>
                   <a class="btn btn-success btn-sm" href="{{ route('admin.posts.create') }}">
                      <i class="fa-solid fa-plus"></i>
                   </a>
                </div>
 
-               <div class="card-body">
+               <div class="card-body bg-secondary">
                   @if (session('status'))
                      <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -20,7 +20,7 @@
                   @endif
 
                   {{-- POSTS TABLE --}}
-                  <table class="table">
+                  <table class="table table-dark">
                      <thead>
                         <tr>
                            <th scope="col">ID</th>
