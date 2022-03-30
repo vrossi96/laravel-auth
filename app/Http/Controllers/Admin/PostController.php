@@ -48,7 +48,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('admin.posts.show', compact('post'));
+        return redirect()->route('admin.posts.show', $post);
     }
 
     /**
@@ -85,7 +85,7 @@ class PostController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title, '-');
         $post->update($data);
-        return redirect()->route('admin.posts.show', compact('post'));
+        return redirect()->route('admin.posts.show', $post);
     }
 
     /**
